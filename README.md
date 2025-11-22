@@ -90,7 +90,7 @@ _Add screenshot below after uploading the file into the `assets/` folder:_
 ---
 
 ## 🪣 S3 Bucket & Parquet File
-![s3_parquet](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/s3_parquet.png)
+![s3_parquet](https://github.com/Sampreethi66/aws-industrial-machine-failure-analysis/blob/main/assets/AWS%20S3%20bucket%20with%20Parquet%20file.png)
 
 ---
 
