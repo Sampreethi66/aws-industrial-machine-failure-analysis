@@ -4,8 +4,42 @@ End-to-end AWS data engineering pipeline using S3, Glue Crawler, Athena, and Qui
 ---
 
 ## 🏗️ Architecture Overview
-![architecture](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/architecture.png)
+This project uses a full AWS analytics pipeline:
 
+Local PySpark ETL
+↓
+S3 Curated Bucket (Parquet)
+↓
+AWS Glue Crawler
+↓
+AWS Glue Data Catalog
+↓
+Amazon Athena
+↓
+Amazon QuickSight (SPICE Dataset + Dashboard)
+
+markdown
+Copy code
+
+### 🔄 **Detailed Flow**
+
+1. **PySpark ETL (Local)**
+   - Clean & transform AI4I dataset
+   - Write curated Parquet files
+
+2. **Amazon S3**
+   - Store curated data in:  
+     `s3://walbrydge-curated-sampreethi/ai4i2020_parquet/`
+
+3. **AWS Glue Crawler**
+   - Creates schema in `walbrydge_curated_db`
+   - Table: `ai4i2020_parquet`
+
+4. **Amazon Athena**
+   - SQL queries for validation
+
+5. **Amazon QuickSight**
+   - Athena data source → SPICE dataset → Dashboard
 ---
 
 ## 🚀 Key Features
