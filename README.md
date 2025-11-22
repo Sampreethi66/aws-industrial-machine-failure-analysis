@@ -76,7 +76,7 @@ _Add screenshot below after uploading the file into the `assets/` folder:_
 ```
 ![Dashboard](assets/dashboard.png)
 
-
+```
 ---
 
 ## 🧠 What This Project Demonstrates
