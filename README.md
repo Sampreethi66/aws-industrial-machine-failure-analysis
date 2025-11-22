@@ -73,7 +73,6 @@ https://github.com/Sampreethi66/aws-industrial-machine-failure-analysis/blob/mai
 
 _Add screenshot below after uploading the file into the `assets/` folder:_
 
-```
 
 ## 📊 Dashboard Preview
 ![dashboard](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/dashboard.png)
@@ -88,7 +87,7 @@ _Add screenshot below after uploading the file into the `assets/` folder:_
 ## 🔍 Athena Query Output
 ![athena_query](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/athena_query.png)
 
-```
+
 ---
 
 ## 🧠 What This Project Demonstrates
