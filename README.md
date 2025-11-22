@@ -87,6 +87,10 @@ _Add screenshot below after uploading the file into the `assets/` folder:_
 ## 🔍 Athena Query Output
 ![athena_query](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/athena_query.png)
 
+---
+
+## 🪣 S3 Bucket & Parquet File
+![s3_parquet](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/s3_parquet.png)
 
 ---
 
