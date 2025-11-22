@@ -56,7 +56,6 @@ Example query:
 ```sql
 SELECT * FROM walbrydge_curated_db.ai4i2020_parquet LIMIT 10;
 ```
-https://github.com/Sampreethi66/aws-industrial-machine-failure-analysis/blob/main/assets/dashboard.png
 ---
 
 ### **5️⃣ Amazon QuickSight**
