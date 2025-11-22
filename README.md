@@ -74,8 +74,8 @@ https://github.com/Sampreethi66/aws-industrial-machine-failure-analysis/blob/mai
 _Add screenshot below after uploading the file into the `assets/` folder:_
 
 ```
+![Dashboard](assets/dashboard.png)
 
-```
 
 ---
 
