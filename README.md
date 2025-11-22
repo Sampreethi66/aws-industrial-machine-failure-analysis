@@ -56,7 +56,7 @@ Example query:
 ```sql
 SELECT * FROM walbrydge_curated_db.ai4i2020_parquet LIMIT 10;
 ```
-
+https://github.com/Sampreethi66/aws-industrial-machine-failure-analysis/blob/main/assets/dashboard.png
 ---
 
 ### **5️⃣ Amazon QuickSight**
@@ -74,7 +74,7 @@ SELECT * FROM walbrydge_curated_db.ai4i2020_parquet LIMIT 10;
 _Add screenshot below after uploading the file into the `assets/` folder:_
 
 ```
-![Dashboard](assets/dashboard.png)
+
 ```
 
 ---
