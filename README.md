@@ -1,109 +1,123 @@
-## 📊 AWS Industrial Machine Failure Analysis  
-End-to-end AWS data engineering pipeline using S3, Glue Crawler, Athena, and QuickSight to analyze industrial IoT machine failure data (AI4I dataset).
+# 🏭 AWS Industrial Machine Failure Analysis  
+### End-to-End AWS Data Engineering + Analytics Pipeline (AI4I Dataset)
+
+This project builds a complete AWS-based analytics pipeline to analyze industrial IoT machine failure data using services like **S3, Glue Crawler, Athena, and QuickSight**.  
+A curated Parquet dataset is created using PySpark, cataloged using Glue, queried using Athena, and visualized in QuickSight.
 
 ---
 
-## 🏗️ Architecture Overview
-This project uses a full AWS analytics pipeline:
+## 🚀 Project Architecture
 
-Local PySpark ETL
-↓
-S3 Curated Bucket (Parquet)
-↓
-AWS Glue Crawler
-↓
-AWS Glue Data Catalog
-↓
-Amazon Athena
-↓
-Amazon QuickSight (SPICE Dataset + Dashboard)
+```mermaid
+flowchart TD
 
-markdown
-Copy code
+    A[Local PySpark ETL<br/>Clean + Transform + Parquet Write] --> B[S3 Curated Bucket<br/>ai4i2020_parquet/]
+    B --> C[AWS Glue Crawler<br/>Schema Inference]
+    C --> D[AWS Glue Data Catalog<br/>Table: ai4i2020_parquet]
+    D --> E[Amazon Athena<br/>SQL Validation]
+    E --> F[Amazon QuickSight<br/>SPICE Dataset + Dashboard]
 
-### 🔄 **Detailed Flow**
-
-1. **PySpark ETL (Local)**
-   - Clean & transform AI4I dataset
-   - Write curated Parquet files
-
-2. **Amazon S3**
-   - Store curated data in:  
-     `s3://walbrydge-curated-sampreethi/ai4i2020_parquet/`
-
-3. **AWS Glue Crawler**
-   - Creates schema in `walbrydge_curated_db`
-   - Table: `ai4i2020_parquet`
-
-4. **Amazon Athena**
-   - SQL queries for validation
-
-5. **Amazon QuickSight**
-   - Athena data source → SPICE dataset → Dashboard
----
-
-## 🚀 Key Features
-- Ingested the AI4I industrial dataset into Amazon S3  
-- Converted raw CSV → optimized Parquet for analytics  
-- Built AWS Glue Crawler to infer schema into Data Catalog  
-- Queried data using Amazon Athena SQL  
-- Designed and published a QuickSight dashboard with failure insights  
-- Automated refresh through QuickSight SPICE  
+```
 
 ---
 
-## 📁 Dataset
-AI4I Industrial IoT dataset (10,000 rows) containing sensor values:
-- Air temperature  
-- Process temperature  
-- Rotational speed  
-- Torque  
-- Tool wear  
-- Machine failure (target)
+## 📂 Data Flow Breakdown
+
+### **1️⃣ PySpark ETL**
+- Load raw AI4I dataset  
+- Clean and prepare features  
+- Convert to **Parquet**  
+- Upload to S3 curated bucket  
+  - `s3://walbrydge-curated-sampreethi/ai4i2020_parquet/`
 
 ---
 
-## 🛠️ AWS Services Used
-| Service | Purpose |
-|--------|---------|
-| **S3** | Stores raw + curated data |
-| **Glue Crawler** | Creates schema in Glue Data Catalog |
-| **Athena** | SQL queries on S3 parquet |
-| **QuickSight** | Dashboard + insights |
-| **IAM** | Secure access between services |
+### **2️⃣ Amazon S3 (Curated Zone)**
+Stores optimized Parquet files for analytics workloads.
+
+---
+
+### **3️⃣ AWS Glue Crawler**
+- Scans the Parquet folder  
+- Creates a table in the Glue Data Catalog  
+- Database: **walbrydge_curated_db**  
+- Table: **ai4i2020_parquet**
+
+---
+
+### **4️⃣ Amazon Athena**
+Used to:
+- Validate schema
+- Preview table data
+- Run SQL queries
+- Verify successful ingestion  
+Example query:
+
+```sql
+SELECT * FROM walbrydge_curated_db.ai4i2020_parquet LIMIT 10;
+```
+
+---
+
+### **5️⃣ Amazon QuickSight**
+- Athena → SPICE dataset  
+- Built a full analytics dashboard showing:
+  - Machine failure counts  
+  - Temperature vs failure  
+  - Torque analysis  
+  - Tool wear vs temperature interactions  
 
 ---
 
 ## 📊 Dashboard Preview
-![dashboard](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/dashboard.png)
+
+_Add screenshot below after uploading the file into the `assets/` folder:_
+
+```
+![Dashboard](assets/dashboard.png)
+```
 
 ---
 
-## 🐝 Glue Crawler Result
-![glue_crawler](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/glue_crawler.png)
+## 🧠 What This Project Demonstrates
+
+✔ AWS Data Engineering fundamentals  
+✔ PySpark ETL & Parquet optimization  
+✔ Automated Glue Crawler metadata management  
+✔ SQL analytics using Athena  
+✔ Interactive dashboards in QuickSight  
+✔ Best practices for S3 data zones (Curated, Raw)  
+✔ End-to-end reproducible cloud pipeline  
 
 ---
 
-## 🔍 Athena Query Output
-![athena_query](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/athena_query.png)
+## 🛠 Tools & Technologies
+
+| Layer | Services / Tools |
+|------|------------------|
+| Storage | Amazon S3 |
+| Metadata | AWS Glue Crawler, Glue Data Catalog |
+| Query Engine | Amazon Athena |
+| Visualization | Amazon QuickSight |
+| ETL | PySpark / Local Python |
+| Data Format | Parquet |
 
 ---
 
-## 📈 Insights Discovered
-- Majority of machines **do not fail**, but failed machines show high torque & tool wear  
-- Higher **process temperature (K)** correlates with greater failure risk  
-- Machines with high **rotational speed** and **torque fluctuations** are more failure-prone  
-- Tool wear shows a linear degradation trend leading to failures  
+## 📝 Future Enhancements
+
+- Add ML predictions for machine failure  
+- Deploy using AWS Lambda + Step Functions  
+- Automate ETL using AWS Glue Spark Jobs  
 
 ---
 
-## 🧠 Future Work (Optional Enhancements)
-- Build ML failure prediction model  
-- Automate pipeline using Lambda + Step Functions  
-- Build anomaly detection via Amazon Lookout for Equipment  
+## 👤 Author
+
+**Sampreethi Bokka**  
+M.S. Business Analytics & AI — UT Dallas  
+GitHub: https://github.com/Sampreethi66  
+LinkedIn: https://linkedin.com/in/sampreethi-bokka  
 
 ---
 
-## 📝 Author
-Sampreethi Bokka  
-UT Dallas — Data Engineering & Machine Learning Projects  
