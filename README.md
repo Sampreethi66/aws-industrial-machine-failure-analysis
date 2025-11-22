@@ -74,7 +74,19 @@ https://github.com/Sampreethi66/aws-industrial-machine-failure-analysis/blob/mai
 _Add screenshot below after uploading the file into the `assets/` folder:_
 
 ```
-![Dashboard](assets/dashboard.png)
+
+## 📊 Dashboard Preview
+![dashboard](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/dashboard.png)
+
+---
+
+## 🐝 Glue Crawler Result
+![glue_crawler](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/glue_crawler.png)
+
+---
+
+## 🔍 Athena Query Output
+![athena_query](https://raw.githubusercontent.com/Sampreethi66/aws-industrial-machine-failure-analysis/main/assets/athena_query.png)
 
 ```
 ---
